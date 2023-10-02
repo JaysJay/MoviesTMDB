@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SansTv</string>
+    <string name="search">Search</string>
+    <string name="retry">Retry</string>
+    <string name="home">Home</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="watchlist">Watchlist</string>
+    <string name="share">Share</string>
+    <string name="overview">Overview</string>
+    <string name="guest_stars">Guest stars</string>
+    <string name="discover">Discover</string>
+    <string name="your_library_is_empty">Your library is empty</string>
+    <string name="watch_now">Watch now</string>
+    <string name="undo">Undo</string>
+    <string name="share_links">Share links</string>
+    <string name="library">Library</string>
+    <string name="search_for_a_movie_tv_show">Search for a movie, tv show…</string>
+    <string name="view_all_seasons">View all seasons</string>
+    <string name="movies">Movies</string>
+    <string name="tv_shows">TV Shows</string>
+    <string name="filters">Filters</string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
+    <string name="browsing_movies">Browsing movies</string>
+    <string name="browsing_tv">Browsing shows</string>
+    <string name="genre">Genre</string>
+    <string name="sort">Sort</string>
+    <string name="select_genre">Select genre</string>
+    <string name="my_library">My Library</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="keyword">Keyword</string>
+</resources>

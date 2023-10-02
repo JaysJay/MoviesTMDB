@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sanstv.movies.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_episodesListFragment"
+            app:destination="@id/episodesListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.sanstv.movies.ui.browse.BrowseFragment"
+        android:label="Discover"
+        tools:layout="@layout/fragment_browse">
+        <action
+            android:id="@+id/action_discoverFragment_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.sanstv.movies.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myShowsFragment"
+        android:name="com.sanstv.movies.ui.myshows.MyShowsFragment"
+        android:label="My shows"
+        tools:layout="@layout/fragment_my_shows">
+        <action
+            android:id="@+id/action_myShowsFragment_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bigImageFragment"
+        android:name="com.sanstv.movies.ui.image.BigImageFragment"
+        android:label="BigImageFragment"
+        tools:layout="@layout/fragment_big_image" />
+
+    <fragment
+        android:id="@+id/fragmentMedia"
+        android:name="com.sanstv.movies.ui.media.MediaFragment"
+        android:label="Fragment Media"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="media"
+            app:argType="com.sanstv.movies.data.model.tmdb.entities.Media" />
+        <action
+            android:id="@+id/action_fragmentMedia_to_episodeListFragment"
+            app:destination="@id/episodesListFragment" />
+        <action
+            android:id="@+id/action_fragmentMedia_to_castsFragment"
+            app:destination="@id/castsFragment" />
+        <action
+            android:id="@+id/action_fragmentMedia_to_bigImageFragment"
+            app:destination="@id/bigImageFragment" />
+        <action
+            android:id="@+id/action_fragmentMedia_to_watchFragment"
+            app:destination="@id/watchFragment" />
+        <action
+            android:id="@+id/action_fragmentMedia_self"
+            app:destination="@id/fragmentMedia">
+            <argument
+                android:name="media"
+                app:argType="com.sanstv.movies.data.model.tmdb.entities.Media" />
+        </action>
+        <action
+            android:id="@+id/action_fragmentMedia_to_fragmentList"
+            app:destination="@id/fragmentList" />
+        <action
+            android:id="@+id/action_fragmentMedia_to_fragmentCollection"
+            app:destination="@id/fragmentCollection" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/episodesListFragment"
+        android:name="com.sanstv.movies.ui.episodes.EpisodesFragment"
+        android:label="EpisodesFragment"
+        tools:layout="@layout/fragment_episode">
+        <action
+            android:id="@+id/action_episodesListFragment_to_watchFragment"
+            app:destination="@id/watchFragment" />
+        <action
+            android:id="@+id/action_episodesListFragment_to_bigImageFragment"
+            app:destination="@id/bigImageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/watchFragment"
+        android:name="com.sanstv.movies.ui.watch.WatchFragment"
+        android:label="WatchFragment"
+        tools:layout="@layout/fragment_watch">
+        <action
+            android:id="@+id/action_watchFragment_to_castsFragment"
+            app:destination="@id/castsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/castsFragment"
+        android:name="com.sanstv.movies.ui.cast.CastsFragment"
+        android:label="CastsFragment"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="cast"
+            app:argType="com.sanstv.movies.data.model.tmdb.entities.Cast" />
+        <action
+            android:id="@+id/action_castsFragment_to_bigImageFragment"
+            app:destination="@id/bigImageFragment" />
+        <action
+            android:id="@+id/action_castsFragment_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="com.sanstv.movies.ui.list.FragmentList"
+        android:label="FragmentList"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_fragmentList_to_episodesListFragment"
+            app:destination="@id/episodesListFragment" />
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+        <action
+            android:id="@+id/action_fragmentList_to_castsFragment"
+            app:destination="@id/castsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCollection"
+        android:name="com.sanstv.movies.ui.collection.CollectionFragment"
+        android:label="FragmentCollection"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="collectionId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentCollection_to_bigImageFragment"
+            app:destination="@id/bigImageFragment" />
+        <action
+            android:id="@+id/action_fragmentCollection_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+    </fragment>
+    <fragment
+        android:id="@+id/upcomingFragment"
+        android:name="com.sanstv.movies.ui.upcoming.UpcomingFragment"
+        android:label="UpcomingFragment"
+        tools:layout="@layout/fragment_upcoming">
+        <action
+            android:id="@+id/action_upcomingFragment_to_fragmentMedia"
+            app:destination="@id/fragmentMedia" />
+    </fragment>
+
+</navigation>
